@@ -13,7 +13,7 @@ int main()
 	{
 		printf("输入密码:>");
 		scanf("%s", password);//数组名本来就是地址，所以不用加&
-		//if(password == "123456")这个写法是错的，字符串内容不能用==，应用strcmp(专门用于比较字符串)
+		//if(password == "123456")这个写法是错的，比较字符串内容不能用==，应用strcmp(专门用于比较字符串)
 		if (strcmp(password, "123456") == 0)//strcmp引用需要#include <string.h>
 		{
 			printf("登陆成功\n");
