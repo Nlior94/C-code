@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int Fac(int i)
+{
+	if (i <= 1)
+		return 1;
+	else
+		return i * Fac(i - 1);//递归
+}
+
+int main()
+{
+	int i = 0;
+	scanf("%d", &i);
+
+	int ret = Fac(i);//定义Fac函数为阶乘实现函数
+
+	printf("%d\n", ret);
+
+	return 0;
+}
