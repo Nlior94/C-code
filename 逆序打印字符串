@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+//将字符串中的内容反向排列，并打印出反向排列后的效果
+//不能使用C函数中的字符串操作符
+int strlen1(char* arr)
+{
+	int count = 0;
+	while (*arr != '\0')
+	{
+		count++;
+		arr++;
+	}
+	return count;
+}
+
+void reverse(char* arr)
+{
+	int left = 0;
+	int right = strlen1(arr) - 1;//自己构建一个类strlen的函数
+
+	while (right > left)
+	{
+		char tmp = arr[left];
+		arr[left] = arr[right];
+		arr[right] = tmp;
+		left++;
+		right--;
+	}
+}
+
+int main()
+{
+	char arr[] = "hello";
+	reverse(arr);
+	printf("%s", arr);
+
+	return 0;
+}
