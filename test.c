@@ -18,14 +18,18 @@ void game()
 	clean(mine, ROWS, COLS, '0');//初始化为0
 	clean(show, ROWS, COLS, '*');//初始化为*
 
-	display(mine, ROW, COL);
 	display(show, ROW, COL);
 
+	setmine(mine, ROW, COL);
+    //display(mine, ROW, COL);
+
+	findmine(mine, show, ROW, COL);
 }
 
 int main()
 {
 	int input = 0;
+	srand((unsigned int)time(NULL));//用于生成随机值
 	do
 	{
 		menu();
