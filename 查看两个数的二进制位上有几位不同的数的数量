@@ -1,0 +1,51 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+//方法一：
+int main()
+{
+	int m = 0;
+	int n = 0;
+	int i = 0;
+	int count = 0;
+	scanf("%d %d", &m, &n);
+
+	for (i = 0; i < 32; i++)
+	{
+		if (((m >> i) & 1) != ((n >> i) & 1))
+		{
+			count++;
+		}
+	}
+
+	printf("%d", count);
+	return 0;
+}
+
+//方法二：
+int onecounter(int n)
+{
+	int count = 0;
+	int i = 0;
+	while (n)//有几个1while就会重复几遍
+	{
+		n = n & (n - 1);//这一步可以实现运行一次while则n二进制位中的一个1就会被消除
+		count++;
+	}
+	return count;
+}
+
+int main()
+{
+	int m = 0;
+	int n = 0;
+	int count = 0;
+	scanf("%d %d", &m, &n);
+
+	int ret = m ^ n;//相同为0，不同为1
+
+	count = onecounter(ret);//ret的二进制中有几个1，就有几位不同的数
+
+	printf("%d", count);
+	return 0;
+}
