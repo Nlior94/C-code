@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+//喝汽水，1元1瓶汽水，2个空瓶换一瓶汽水，给n元求n元喝到多少瓶汽水
+
+int main()
+{
+	int money = 0;
+	scanf("%d", &money);
+	int total = money;
+	int empty = money;
+
+	while (empty >= 2)//开始换瓶
+	{
+		total += empty / 2;
+		empty = empty / 2 + empty % 2;//empty/2是换来后又喝完的瓶数，empty%2是上一次换完后还剩的瓶数
+	}
+	printf("%d\n", total);
+
+	return 0;
+}
