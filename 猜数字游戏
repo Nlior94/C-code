@@ -50,6 +50,10 @@ int main()
 {
 	int input = 0;
 	srand((unsigned int)time(NULL));//time要引用#include <time.h>
+	//rand函数和srand是要一起配套使用的，rand在生成随机数之前需要取用srand里提供的种子
+	//但若种子没有变化（即srand的参数不变）rand生成的随机数也不变
+	//所以一般使用系统时间来提供变化的种子值（参数）
+	//而这个随机的种子值（参数）就要通过time（NULL）来实现
 
 	do
 	{
