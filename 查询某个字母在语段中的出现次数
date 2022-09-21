@@ -1,0 +1,33 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+void compare(int size, char i, char* str)
+{
+	int n = 0;
+	int count = 0;
+	for (n = 0; n < size; n++)
+	{
+		if (str[n] == i)
+		{
+			count++;
+		}
+	}
+	printf("该字母出现的次数为%d次", count);
+}
+
+int main()
+{
+	char str[500];
+	printf("请输入一段字母数在1-500内的英文\n");
+	gets(str);
+
+	char i;
+	printf("请输入要查询的字母\n");
+	scanf("%c", &i);
+
+	int size = sizeof(str);
+
+	compare(size, i, str);
+
+	return 0;
+}
