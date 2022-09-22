@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <ctype.h>
+
+//想大写转小写就用tolower函数即可
+int main()
+{
+	char str[1000];
+	printf("请输入一段您要转换的英文\n");
+	gets(str);
+
+	int n = 0;
+	n = sizeof(str);
+
+	int i = 0;
+	for (i = 0; i < n; i++)
+	{
+		str[i] = toupper(str[i]);
+	}
+	printf("\n%s", str);
+
+	return 0;
+}
