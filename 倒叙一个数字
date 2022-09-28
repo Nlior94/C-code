@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+//https://blog.csdn.net/weixin_43290957/article/details/108979886(参考)
+//https://oj.kexie.space/problem/6（题目）
+
+void reverse(int a)
+{
+	int i = 0;
+	while (a != 0)
+	{
+		i = i * 10 + a % 10;
+		a = a / 10;
+	}
+	printf("%d",i);
+}
+
+int main()
+{
+	int a = 0;
+	scanf("%d",&a);
+
+	reverse(a);
+
+	return 0;
+}
