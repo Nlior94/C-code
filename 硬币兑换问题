@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+	int i = 0;//一元数
+	int n = 0;//五角数
+	int m = 0;//一角数
+	scanf("%d %d %d", &i, &n, &m);
+
+	int total = 0;
+	total = i * 10 + n * 5 + m;//以角为单位
+
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	if (total / 10 != 0)
+	{
+		a = total / 100;//十元数
+		total = total - a * 100;
+		b = total / 10;//一元数
+		total = total - b * 10;
+		c = total;//一角数
+	}
+
+	printf("%d %d %d", a, b, c);
+
+	return 0;
+}
