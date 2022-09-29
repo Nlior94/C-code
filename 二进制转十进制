@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int i = 0;//输入的二进制数字
+	scanf("%d", &i);
+
+	int a = i;
+	int b = 0;
+	while (a)//计算输入的二进制有几位
+	{
+		a = a / 10;
+		b++;//二进制位数
+	}
+
+	int n = 0;//转换成的十进制数
+
+	//while (i==0);
+	//{
+		//int m = 0;
+	for (int m = 0; m < b; m++)
+	{
+		if (i % 10 == 0)
+		{
+			n = n + 0;
+		}
+		else
+		{
+			n = n + pow(2, m);
+		}
+		i = i / 10;
+	}
+	//}
+	printf("%d", n);
+
+	return 0;
+}
