@@ -45,3 +45,23 @@ int main()
 
 	return 0;
 }
+
+//方法三：递归
+int recursiveGcd(int n, int m)
+{
+	if (n % m == 0)
+		return m;
+	else
+		recursiveGcd(m, n % m);
+}
+
+int main()
+{
+	int n, m, i;
+	scanf("%d %d", &n, &m);
+
+	i = recursiveGcd(n, m);
+	printf("%d", i);
+
+	return 0;
+}
